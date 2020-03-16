@@ -1,7 +1,7 @@
 package com.tk.medical.sms;
 
 import com.tk.medical.bean.IntegrationAuthenticationEntity;
-import com.tk.medical.bean.User;
+import com.tk.medical.bean.UserPojo;
 import com.tk.medical.common.AbstractPreparableIntegrationAuthenticator;
 import com.tk.medical.mapper.UserMapper;
 import org.aspectj.apache.bcel.classfile.Code;
@@ -25,7 +25,7 @@ public class SmsAuthenticator extends AbstractPreparableIntegrationAuthenticator
 
 
     @Override
-    public User authenticate(IntegrationAuthenticationEntity entity) {
+    public UserPojo authenticate(IntegrationAuthenticationEntity entity) {
         String mobile = entity.getAuthParameter("mobile");
         if (StringUtils.isEmpty(mobile)){
             throw new OAuth2Exception("null nobile");

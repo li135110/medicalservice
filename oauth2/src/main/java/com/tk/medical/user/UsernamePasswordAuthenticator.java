@@ -1,7 +1,7 @@
 package com.tk.medical.user;
 
 import com.tk.medical.bean.IntegrationAuthenticationEntity;
-import com.tk.medical.bean.User;
+import com.tk.medical.bean.UserPojo;
 import com.tk.medical.common.AbstractPreparableIntegrationAuthenticator;
 import com.tk.medical.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,14 +21,14 @@ public class UsernamePasswordAuthenticator extends AbstractPreparableIntegration
     private PasswordEncoder passwordEncoder;
 
     @Override
-    public User authenticate(IntegrationAuthenticationEntity entity) {
+    public UserPojo authenticate(IntegrationAuthenticationEntity entity) {
         String name = entity.getAuthParameter("name");
         String pwd = entity.getAuthParameter("pwd");
         if(name == null || pwd == null){
             throw new OAuth2Exception("用户名或密码不能为空");
         }
 
-        User user  = userMapper.selectByUsername(name);
+        UserPojo user  = userMapper.selectByUsername(name);
         if (passwordEncoder.matches(pwd,user.getPasword())){
             return user;
         }

@@ -1,12 +1,12 @@
 package com.tk.medical.mapper;
 
-import com.tk.medical.bean.User;
+import com.tk.medical.bean.UserPojo;
 
 public interface UserMapper {
 
-    User selectByUsername(String username);
+    UserPojo selectByUsername(String username);
 
-    User selectByMobile(String mobile);
+    UserPojo selectByMobile(String mobile);
 
-    User selectByEmail(String email);
+    UserPojo selectByEmail(String email);
 }

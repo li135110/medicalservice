@@ -22,7 +22,7 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
     private AuthenticationManager authenticationManager;
 
 
-    //
+
     @Autowired
     private IntegrationAuthenticator integrationAuthenticator;
 

@@ -11,6 +11,6 @@ public class EureakServerApplication {
     public static void main(String[] args) {
 
         SpringApplication.run(EureakServerApplication.class, args);
-        System.err.println("注册中心1启动...");
+
     }
 }

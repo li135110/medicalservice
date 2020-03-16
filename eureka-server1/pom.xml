@@ -7,12 +7,24 @@
         <groupId>com.tk.medical</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
-
+    <groupId>com.tk.medical</groupId>
     <artifactId>eureka-server1</artifactId>
-
     <name>eureka-server1</name>
+    <version>0.0.1-SNAPSHOT</version>
+
+
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+
+
+
     </dependencies>
+
+
 </project>

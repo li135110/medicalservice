@@ -1,7 +1,7 @@
 package com.tk.medical.service;
 
 import com.tk.medical.bean.IntegrationAuthenticationEntity;
-import com.tk.medical.bean.User;
+import com.tk.medical.bean.UserPojo;
 
 /**
  * 集成认证器接口
@@ -13,7 +13,7 @@ public interface IntegrationAuthenticator {
      * @param entity
      * @return
      */
-    User authenticate(IntegrationAuthenticationEntity entity);
+    UserPojo authenticate(IntegrationAuthenticationEntity entity);
 
     /**
      * 预处理

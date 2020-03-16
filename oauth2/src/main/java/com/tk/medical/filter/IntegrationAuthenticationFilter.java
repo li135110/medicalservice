@@ -1,6 +1,7 @@
 package com.tk.medical.filter;
 
 
+import com.tk.medical.bean.IntegrationAuthenticationEntity;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;

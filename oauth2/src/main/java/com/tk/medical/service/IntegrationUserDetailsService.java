@@ -1,9 +1,11 @@
 package com.tk.medical.service;
 
 import com.tk.medical.bean.IntegrationAuthenticationEntity;
+import com.tk.medical.bean.UserPojo;
 import com.tk.medical.filter.IntegrationAuthenticationContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -25,14 +27,37 @@ public class IntegrationUserDetailsService implements UserDetailsService {
     }
 
 
-
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
 
         IntegrationAuthenticationEntity entity = IntegrationAuthenticationContext.get();
 
+        if (null == entity) {
+            entity = new IntegrationAuthenticationEntity();
+        }
 
+        UserPojo userBean = this.authenticate(entity);
+        if (null == userBean) {
+            throw new OAuth2Exception("此账号不存在！");
+        }
+        User user = new User(
+                userBean.getUsername(),
+                passwordEncoder.encode(entity.getAuthParameter("password")), AuthorityUtils.commaSeparatedStringToAuthorityList("ROOT_USER")
+        );
 
-        return null;
+        return user;
     }
+
+
+    private UserPojo authenticate(IntegrationAuthenticationEntity entity) {
+        if (this.authenticators != null) {
+            for (IntegrationAuthenticator authenticator : authenticators) {
+                if (authenticator.support(entity)) {
+                    return authenticator.authenticate(entity);
+                }
+            }
+        }
+        throw new OAuth2Exception("无效的auth_type参数值！");
+    }
+
 }
