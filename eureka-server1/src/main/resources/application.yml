@@ -1,6 +1,6 @@
 spring:
   application:
-    name: crawler-eureka
+    name: eureka-server1
 
 server:
   host: http://localhost
