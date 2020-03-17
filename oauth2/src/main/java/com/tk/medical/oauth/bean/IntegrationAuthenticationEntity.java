@@ -1,6 +1,5 @@
-package com.tk.medical.bean;
+package com.tk.medical.oauth.bean;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

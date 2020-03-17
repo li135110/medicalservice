@@ -1,4 +1,4 @@
-package com.tk.medical.config.a;
+package com.tk.medical.oauth.config.a;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;

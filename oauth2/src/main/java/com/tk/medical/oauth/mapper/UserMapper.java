@@ -1,6 +1,6 @@
-package com.tk.medical.mapper;
+package com.tk.medical.oauth.mapper;
 
-import com.tk.medical.bean.UserPojo;
+import com.tk.medical.oauth.bean.UserPojo;
 
 public interface UserMapper {
 

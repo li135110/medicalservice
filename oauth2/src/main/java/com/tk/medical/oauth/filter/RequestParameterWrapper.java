@@ -1,4 +1,4 @@
-package com.tk.medical.filter;
+package com.tk.medical.oauth.filter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;

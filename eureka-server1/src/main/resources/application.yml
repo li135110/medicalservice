@@ -1,15 +1,14 @@
+server:
+  port: 9990 #指定运行端口
 spring:
   application:
-    name: eureka-server1
-
-server:
-  host: http://localhost
-  port: 9990
+    name: eureka-server #指定服务的名称
 eureka:
-  client:
-    fetch-registry: false
-    register-with-eureka: false
-    service-url:
-      defaultZone: ${server.host}:${server.port}/eureka/
   instance:
-    prefer-ip-address: true
+    hostname: localhost #指定主机地址
+  client:
+    fetch-registry: false #表示是否从 Eureka Server获取注册信息，默认为true。
+    register-with-eureka: false #表示是否将自己注册到 Eureka Server，默认是true。
+    defaultZone: http://127.0.0.1:9990/eureka/
+#  server:
+#    enable-self-preservation: true #开启保护模式

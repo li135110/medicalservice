@@ -1,15 +1,13 @@
-package com.tk.medical.sms;
+package com.tk.medical.oauth.sms;
 
-import com.tk.medical.bean.IntegrationAuthenticationEntity;
-import com.tk.medical.bean.UserPojo;
-import com.tk.medical.common.AbstractPreparableIntegrationAuthenticator;
-import com.tk.medical.mapper.UserMapper;
-import org.aspectj.apache.bcel.classfile.Code;
+import com.tk.medical.oauth.bean.IntegrationAuthenticationEntity;
+import com.tk.medical.oauth.bean.UserPojo;
+import com.tk.medical.oauth.common.AbstractPreparableIntegrationAuthenticator;
+import com.tk.medical.oauth.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.common.exceptions.OAuth2Exception;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
-import sun.swing.StringUIClientPropertyKey;
 
 /**
  * 短信认证

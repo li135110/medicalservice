@@ -1,6 +1,6 @@
-package com.tk.medical.config;
+package com.tk.medical.oauth.config;
 
-import com.tk.medical.service.IntegrationAuthenticator;
+import com.tk.medical.oauth.service.IntegrationAuthenticator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

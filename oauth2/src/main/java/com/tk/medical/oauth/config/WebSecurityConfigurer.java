@@ -1,4 +1,4 @@
-package com.tk.medical.config;
+package com.tk.medical.oauth.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,0 +1,28 @@
+#spring:
+#  application:
+#    name: eureka-server2
+#server:
+#  host: http://127.0.0.1
+#  port: 9991
+#eureka:
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://eureka-server1:9990/eureka
+#  instance:
+#    prefer-ip-address: true
+#    hostname: eureka-server2
+
+spring:
+  application:
+    name: eureka-server
+server:
+  port: 9990
+
+eureka:
+  instance:
+    hostname: eureka2
+  client:
+    service-url:
+      defaultZone: http://eureka2:9990/eureka/

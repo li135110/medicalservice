@@ -1,8 +1,8 @@
-package com.tk.medical.service;
+package com.tk.medical.oauth.service;
 
-import com.tk.medical.bean.IntegrationAuthenticationEntity;
-import com.tk.medical.bean.UserPojo;
-import com.tk.medical.filter.IntegrationAuthenticationContext;
+import com.tk.medical.oauth.bean.IntegrationAuthenticationEntity;
+import com.tk.medical.oauth.bean.UserPojo;
+import com.tk.medical.oauth.filter.IntegrationAuthenticationContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;

@@ -1,6 +1,6 @@
-package com.tk.medical.filter;
+package com.tk.medical.oauth.filter;
 
-import com.tk.medical.bean.IntegrationAuthenticationEntity;
+import com.tk.medical.oauth.bean.IntegrationAuthenticationEntity;
 
 public class IntegrationAuthenticationContext {
 

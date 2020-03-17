@@ -1,7 +1,7 @@
-package com.tk.medical.common;
+package com.tk.medical.oauth.common;
 
-import com.tk.medical.bean.IntegrationAuthenticationEntity;
-import com.tk.medical.service.IntegrationAuthenticator;
+import com.tk.medical.oauth.bean.IntegrationAuthenticationEntity;
+import com.tk.medical.oauth.service.IntegrationAuthenticator;
 
 public abstract class AbstractPreparableIntegrationAuthenticator implements IntegrationAuthenticator {
 

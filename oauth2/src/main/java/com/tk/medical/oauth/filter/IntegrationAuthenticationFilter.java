@@ -1,27 +1,24 @@
-package com.tk.medical.filter;
+package com.tk.medical.oauth.filter;
 
 
-import com.tk.medical.bean.IntegrationAuthenticationEntity;
+import com.tk.medical.oauth.bean.IntegrationAuthenticationEntity;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.security.web.util.matcher.OrRequestMatcher;
 import org.springframework.security.web.util.matcher.RequestMatcher;
-import org.springframework.stereotype.Component;
 import org.springframework.web.filter.GenericFilterBean;
-import com.tk.medical.service.IntegrationAuthenticator;
+import com.tk.medical.oauth.service.IntegrationAuthenticator;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletRequestWrapper;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
 
 
