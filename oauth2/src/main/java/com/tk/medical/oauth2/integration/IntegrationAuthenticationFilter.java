@@ -29,8 +29,10 @@ import java.util.Map;
  */
 @Component
 public class IntegrationAuthenticationFilter extends GenericFilterBean implements ApplicationContextAware {
-    private static final String AUTH_TYPE_PARM_NAME = "auth_type";//登录类型参数名
-    private static final String OAUTH_TOKEN_URL = "/oauth/token";//需要拦截的路由
+    //登录类型参数名
+    private static final String AUTH_TYPE_PARM_NAME = "auth_type";
+    //需要拦截的路由
+    private static final String OAUTH_TOKEN_URL = "/oauth/token";
     private RequestMatcher requestMatcher;
     private ApplicationContext applicationContext;
     private Collection<IntegrationAuthenticator> authenticators;
@@ -45,10 +47,10 @@ public class IntegrationAuthenticationFilter extends GenericFilterBean implement
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
-        if (requestMatcher.matches(request)){
+        if (requestMatcher.matches(request)) {
             RequestParameterWrapper requestParameterWrapper = new RequestParameterWrapper(request);
-            if (requestParameterWrapper.getParameter("password") == null){
-                requestParameterWrapper.addParameter("password","");
+            if (requestParameterWrapper.getParameter("password") == null) {
+                requestParameterWrapper.addParameter("password", "");
             }
             IntegrationAuthenticationEntity entity = new IntegrationAuthenticationEntity();
             entity.setAuthType(requestParameterWrapper.getParameter(AUTH_TYPE_PARM_NAME));
@@ -56,14 +58,13 @@ public class IntegrationAuthenticationFilter extends GenericFilterBean implement
             IntegrationAuthenticationContext.set(entity);
             try {
                 this.prepare(entity);
-                filterChain.doFilter(requestParameterWrapper,servletResponse);
+                filterChain.doFilter(requestParameterWrapper, servletResponse);
                 this.complete(entity);
             } finally {
                 IntegrationAuthenticationContext.clear();
             }
-        }
-        else {
-            filterChain.doFilter(servletRequest,servletResponse);
+        } else {
+            filterChain.doFilter(servletRequest, servletResponse);
         }
     }
 
@@ -74,25 +75,26 @@ public class IntegrationAuthenticationFilter extends GenericFilterBean implement
 
     /**
      * 认证前回调
-     * @param entity    集成认证实体
+     *
+     * @param entity 集成认证实体
      */
 //    IntegrationAuthenticationEntity entity
     private void prepare(IntegrationAuthenticationEntity entity) {
-        if (entity != null){
-            synchronized (this){
+        if (entity != null) {
+            synchronized (this) {
                 Map<String, IntegrationAuthenticator> map = applicationContext.getBeansOfType(IntegrationAuthenticator.class);
-                if (map != null){
+                if (map != null) {
                     this.authenticators = map.values();
                 }
             }
         }
-        if (this.authenticators == null){
+        if (this.authenticators == null) {
             this.authenticators = new ArrayList<>();
         }
 
 
-        for (IntegrationAuthenticator authenticator : this.authenticators){
-            if (authenticator.support(entity)){
+        for (IntegrationAuthenticator authenticator : this.authenticators) {
+            if (authenticator.support(entity)) {
                 authenticator.prepare(entity);
             }
         }
@@ -100,11 +102,12 @@ public class IntegrationAuthenticationFilter extends GenericFilterBean implement
 
     /**
      * 认证结束后回调
-     * @param entity    集成认证实体
+     *
+     * @param entity 集成认证实体
      */
     private void complete(IntegrationAuthenticationEntity entity) {
-        for (IntegrationAuthenticator authenticator: authenticators) {
-            if(authenticator.support(entity)){
+        for (IntegrationAuthenticator authenticator : authenticators) {
+            if (authenticator.support(entity)) {
                 authenticator.complete(entity);
             }
         }
@@ -137,8 +140,8 @@ public class IntegrationAuthenticationFilter extends GenericFilterBean implement
 
         @Override
         public String getParameter(String name) {
-            String[]values = params.get(name);
-            if(values == null || values.length == 0) {
+            String[] values = params.get(name);
+            if (values == null || values.length == 0) {
                 return null;
             }
             return values[0];

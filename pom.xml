@@ -19,9 +19,10 @@
         <module>zuul</module>
         <module>oauth2</module>
         <module>eureka-server2</module>
+        <module>oauth2-server</module>
     </modules>
 
-
+    <!--集中定义版本号-->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-boot.version>2.1.5.RELEASE</spring-boot.version>
@@ -35,6 +36,11 @@
         <spring-boot-starter-actuator.version>2.1.5.RELEASE</spring-boot-starter-actuator.version>
         <spring-cloud-starter-security.version>2.1.5.RELEASE</spring-cloud-starter-security.version>
         <mybatis-spring-boot-starter.version>2.1.2</mybatis-spring-boot-starter.version>
+        <log4j.version>1.2.17</log4j.version>
+        <spring-boot-starter-data-redis.version>2.1.5.RELEASE</spring-boot-starter-data-redis.version>
+        <spring-cloud-starter-netflix-eureka-client.version>2.1.5.RELEASE</spring-cloud-starter-netflix-eureka-client.version>
+        <mysql-connector-java.version>8.0.19</mysql-connector-java.version>
+        <druid.version>1.1.21</druid.version>
     </properties>
 
     <dependencyManagement>
@@ -98,6 +104,36 @@
                 <version>${mybatis-spring-boot-starter.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${spring-boot-starter-data-redis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+                <version>${spring-cloud-starter-netflix-eureka-client.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -140,6 +176,30 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+        </dependency>
 
     </dependencies>
 

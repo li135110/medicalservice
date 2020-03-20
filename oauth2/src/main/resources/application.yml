@@ -7,19 +7,19 @@ spring:
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
 
-  redis:
-    host: localhost
-    port: 6379
-    password:
-    database: 0
-  application:
-    name: crawler-auth
-  eureka:
-    client:
-      service-url:
-        defaultZone: http://localhost:9990/eureka/
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: health,info,loggers
+#  redis:
+#    host: localhost
+#    port: 6379
+#    password:
+#    database: 0
+#  application:
+#    name: crawler-auth
+#  eureka:
+#    client:
+#      service-url:
+#        defaultZone: http://localhost:9990/eureka/
+#  management:
+#    endpoints:
+#      web:
+#        exposure:
+#          include: health,info,loggers
