@@ -1,5 +1,7 @@
 package com.tk.medical.controller;
 
+import com.tk.medical.entity.Result;
+import com.tk.medical.entity.ResultCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.provider.token.ConsumerTokenServices;
 import org.springframework.web.bind.annotation.DeleteMapping;

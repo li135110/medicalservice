@@ -44,7 +44,7 @@ public class MyUserDetailService implements UserDetailsService {
             //获取权限
             for (SysPermission permission : role.getSysPermissions()) {
                 GrantedAuthority authority = new SimpleGrantedAuthority(permission.getPermissionUri());
-                grantedAuthorities.add(authority)
+                grantedAuthorities.add(authority);
             }
 
         }
