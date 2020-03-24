@@ -39,10 +39,14 @@
         <mybatis-spring-boot-starter.version>2.1.2</mybatis-spring-boot-starter.version>
         <log4j.version>1.2.17</log4j.version>
         <spring-boot-starter-data-redis.version>2.1.5.RELEASE</spring-boot-starter-data-redis.version>
-        <spring-cloud-starter-netflix-eureka-client.version>2.1.5.RELEASE</spring-cloud-starter-netflix-eureka-client.version>
+        <spring-cloud-starter-netflix-eureka-client.version>2.1.5.RELEASE
+        </spring-cloud-starter-netflix-eureka-client.version>
         <mysql-connector-java.version>8.0.19</mysql-connector-java.version>
         <druid.version>1.1.21</druid.version>
         <fastjson.version>1.2.67</fastjson.version>
+        <commons-lang3.version>3.9</commons-lang3.version>
+        <commons-codec.version>1.14</commons-codec.version>
+
     </properties>
 
     <dependencyManagement>
@@ -143,6 +147,19 @@
                 <version>${fastjson.version}</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-codec.version}</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>
@@ -214,6 +231,16 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
         </dependency>
 
 

@@ -8,7 +8,11 @@ import java.util.List;
 
 @Data
 public class TreeNode {
-    ng officeCode;
+    private String id;
+    /**
+     * 机构编码
+     */
+    private String officeCode;
     /**
      * 父级编号
      */
