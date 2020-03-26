@@ -17,7 +17,7 @@ import java.util.Date;
 @Component
 public class LogAspect {
 
-    @Pointcut(value = "@annotation(WebLogAspect)")
+    @Pointcut(value = "@annotation(com.tk.medical.aop.WebLogAspect)")
     public void logAspect() {
     }
 
