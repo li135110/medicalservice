@@ -1,9 +1,9 @@
 spring:
   application:
-    name: eureka-server
+    name: javayh-eureka
 
 server:
-  port: 8080
+  port: 8090
 
 eureka:
   instance:

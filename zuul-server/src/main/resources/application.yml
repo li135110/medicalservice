@@ -1,44 +1,65 @@
 server:
-  port: 9996
+  port: 8091
+
 spring:
   application:
-    name: zuul-server
-  redis:
-    host: localhost
-    port: 6379
-    password: 123456
+    name: javayh-zuul
 
-zuul:
-  routes:
-    feign-auth:
-      path: /auth/**
-      serviceId: crawler-auth
-      strip-prefix: true
-      custom-sensitive-headers: true
-    feign-user:
-      path: /user/**
-      serviceId: crawler-goddess
-      sensitiveHeaders:
-
+#--------------------eureka---------------------
 eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8080/eureka/
   instance:
     prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://localhost:8090/eureka/
 
-logging:
-  level:
-    ROOT: info
-    org.springframework.web: info
+#--------------------Zuul-----------------------
+zuul:
+  routes:
+    member:
+      path: /member/**
+      serviceId: javayh-shop
+      sensitiveHeaders: "*"
+    auth:
+      path: /auth/**
+      serviceId: javayh-oauth
+      sensitiveHeaders: "*"
+  retryable: false
+  ignored-services: "*"
+  ribbon:
+    eager-load:
+      enabled: true
+  host:
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
+  add-proxy-headers: true
 
+#---------------------OAuth2---------------------
+security:
+  oauth2:
+    client:
+      access-token-uri: http://localhost:${server.port}/auth/oauth/token
+      user-authorization-uri: http://localhost:${server.port}/auth/oauth/authorize
+      client-id: web
+    resource:
+      user-info-uri:  http://localhost:${server.port}/auth/javayh/member
+      prefer-token-info: false
+
+#----------------------超时配置-------------------
 ribbon:
-  ReadTimeout: 6000000
-  SocketTimeout: 6000000
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+  MaxAutoRetries: 2
+  MaxAutoRetriesNextServer: 2
+  eureka:
+    enabled: true
 hystrix:
   command:
     default:
       execution:
+        timeout:
+          enabled: true
         isolation:
           thread:
-            timeoutInMilliseconds: 600000
+            timeoutInMilliseconds: 60000
