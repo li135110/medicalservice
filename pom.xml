@@ -21,6 +21,8 @@
         <module>eureka-server2</module>
         <module>oauth2-server</module>
         <module>common-server</module>
+        <module>eureka-server3</module>
+        <module>gateway-server</module>
     </modules>
 
     <!--集中定义版本号-->

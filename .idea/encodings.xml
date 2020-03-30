@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/common-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-server1" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-server2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-server3" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/oauth2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/oauth2-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zuul-server" charset="UTF-8" />

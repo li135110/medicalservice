@@ -1,1 +1,1 @@
-第一个注册中心
+eureka-server2

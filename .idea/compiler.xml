@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="zuul-server" />
+        <module name="eureka-server1" />
         <module name="common-server" />
         <module name="eureka-server2" />
-        <module name="eureka-server1" />
+        <module name="zuul-server" />
         <module name="oauth2-server" />
         <module name="oauth2" />
+        <module name="gateway-server" />
+        <module name="eureka-server3" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,6 +25,8 @@
       <module name="common-server" options="-parameters" />
       <module name="eureka-server1" options="-parameters" />
       <module name="eureka-server2" options="-parameters" />
+      <module name="eureka-server3" options="-parameters" />
+      <module name="gateway-server" options="-parameters" />
       <module name="oauth2" options="-parameters" />
       <module name="oauth2-server" options="-parameters" />
       <module name="zuul-server" options="-parameters" />
