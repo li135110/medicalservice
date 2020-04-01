@@ -15,7 +15,7 @@ spring:
   #应用配置
   application:
     #名称: api网关服务
-    name: gateway-server
+    name: api-gateway
 
 #API网关配置
 zuul:
@@ -25,4 +25,5 @@ zuul:
       #响应的路径
       path: /producer/**
       #重定向到的服务（根据服务id名称从注册中心获取服务地址）
-      serviceId:  producer-service
+#      serviceId:  producer-service
+      serviceId:  produce-server

@@ -23,6 +23,7 @@
         <module>common-server</module>
         <module>eureka-server3</module>
         <module>gateway-server</module>
+        <module>produce-server</module>
     </modules>
 
     <!--集中定义版本号-->

@@ -15,7 +15,7 @@ spring:
   #应用配置
   application:
     #名称: api网关服务
-    name: gateway-server
+    name: api-gateway
 
 #API网关配置
 zuul:
